@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+    <div class="d-flex flex-column justify-content-center align-items-center">
+      <a routerLink="/admin"><img src="assets/logos.jpg" alt="Error" /></a>
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link mx-1 text-white" routerLink="/admin">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-1 text-white" routerLink="add">Add Car</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-1 text-white" routerLink="agreements">Rental Agreements</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-1 text-white" routerLink="request-for-return">Request For Return</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-1 text-white" (click)="logout()">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>

@@ -1,0 +1,17 @@
+#div-1{
+    background-color: rgb(207, 207, 207);
+    box-shadow: 2px 2px 2px;
+}
+
+#div-2{
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 1.5vw;
+    box-shadow: 2px 2px 2px;
+}
+
+.end{
+    display: flex;
+    justify-content: center;
+     align-items: center;
+}

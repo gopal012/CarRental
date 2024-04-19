@@ -1,0 +1,16 @@
+img{
+    height: 13vh;
+    width: 10vw;
+}
+
+.navbar{
+    background-color: rgb(33 31 31);
+}
+
+li{
+    font-size: 1.5vw;
+}
+
+a{
+    cursor: pointer;
+}

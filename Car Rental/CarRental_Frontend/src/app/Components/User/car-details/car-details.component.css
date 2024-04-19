@@ -1,0 +1,33 @@
+#duration button,#duration input{
+    border: none;
+    background-color: transparent;
+}
+
+#duration input{
+    width: 2vw;
+    text-align: center;
+    
+}
+
+#duration{
+    width: 7vw;
+    height: 5vh;
+    border: 1px solid black;
+    border-radius: 40px;
+}
+
+.container{
+    background-color: rgb(216, 216, 216)
+}
+
+.book-now{
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+}
+
+.book-now:hover{
+    color: black;
+    background-color: rgb(216, 216, 216);
+}

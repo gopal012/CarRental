@@ -1,0 +1,50 @@
+<div id="search-bar" class="d-flex flex-column justify-content-between">
+  <div class="d-flex flex-column  align-items-center pt-5">
+    <p class="text-white fw-bolder large mb-0">RENT CAR ALL OVER INDIA</p>
+    <p class="text-white small">Rent from India's Largest Fleet of Cars, Trusted by millions.</p>
+  </div>
+  <form [formGroup]="filterForm" (ngSubmit)="onSearch()">
+    <div id="search-bar-div" class="mb-5 container d-flex flex-wrap justify-content-between">
+      <input type="text" name="makerName" formControlName="maker" placeholder="Maker">
+      <input type="text" name="model" formControlName="model" placeholder="Model">
+      <input type="number" name="rent" formControlName="rentPrice" placeholder="Max Rent Price">
+      <button type="submit" class="bg-success m-2 w-25">Search</button>
+    </div>
+  </form>
+</div>
+<ng-container *ngIf="filteredCar.length > 0">
+  <div id="main">
+    <h5 class="text-center p-2 pt-4 pb-0">Featured Cars</h5>
+    <h2 class="text-center m-2">Our <span class="fw-bolder">Best Offer</span></h2>
+    <div class="container d-flex justify-content-evenly flex-wrap">
+      <div class="card m-3" style="width: 18rem;" *ngFor="let car of filteredCar">
+        <img class="card-img-top" [src]="car.imageUrl" alt="Error">
+        <div class="card-body d-flex flex-column align-items-center">
+          <h5 class="card-title text-center fw-bolder">{{car.makerName}} {{car.model}}</h5>
+          <p class="card-text mb-1">Start at <span class="price">{{car.price}}</span> Rs. per day</p>
+          <ng-container *ngIf="car.isAvailaible"><span class="text-success">Availaible</span></ng-container>
+          <ng-container *ngIf="!car.isAvailaible"><span class="text-danger">Not Availaible</span></ng-container>
+          <a class="btn btn-primary align-item-center m-2" (click)="details(car.carId)">Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+<ng-container *ngIf="filteredCar.length <= 0">
+  <div id="main">
+    <h5 class="text-center p-2 pt-4 pb-0">Featured Cars</h5>
+    <h2 class="text-center m-2">Our <span class="fw-bolder">Best Offer</span></h2>
+    <div class="container d-flex justify-content-evenly flex-wrap">
+      <div class="card m-3" style="width: 18rem;" *ngFor="let car of cars">
+        <img class="card-img-top" [src]="car.imageUrl" alt="Error">
+        <div class="card-body d-flex flex-column align-items-center">
+          <h5 class="card-title text-center fw-bolder">{{car.makerName}} {{car.model}}</h5>
+          <p class="card-text mb-1">Start at <span class="price">{{car.price}}</span> Rs. per day</p>
+          <ng-container *ngIf="car.isAvailaible"><span class="text-success">Availaible</span></ng-container>
+          <ng-container *ngIf="!car.isAvailaible"><span class="text-danger">Not Availaible</span></ng-container>
+          <a class="btn btn-primary align-item-center m-2" (click)="details(car.carId)">Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

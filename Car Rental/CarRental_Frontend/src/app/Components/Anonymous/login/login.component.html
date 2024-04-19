@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+      <div class="col-md-6">
+          <div class="card">
+              <div class="text-center">
+                  <h1>Login</h1>
+              </div>
+              <form [formGroup]="loginForm" (ngSubmit)="onLogin()"> 
+                  <div class="mb-3">
+                    <label for="InputEmail1" class="form-label">
+                      Email address
+                    </label>
+                    <input formControlName="email" 
+                           [ngClass]="{'is-invalid':loginForm.controls['email'].errors && loginForm.controls['email'].touched}" 
+                           type="email" 
+                           class="form-control">
+                    <div *ngIf="loginForm.controls['email'].errors  && loginForm.controls['email'].touched" class="text-danger">
+                      <small *ngIf="loginForm.controls['email'].errors['required']">
+                          Email is Required
+                      </small>
+                      <small *ngIf="loginForm.controls['email'].errors['email']">
+                          Enter Valid Email-Id
+                      </small>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="InputPassword1" class="form-label">
+                      Password
+                    </label>
+                    <input formControlName="password" 
+                           [ngClass]="{'is-invalid':loginForm.controls['password'].errors && loginForm.controls['password'].touched}" 
+                           type="password" 
+                           class="form-control" >
+                    <div *ngIf="loginForm.controls['password'].errors  && loginForm.controls['password'].touched" class="text-danger">
+                      <small *ngIf="loginForm.controls['password'].errors['required']">
+                          Password is Required
+                      </small>
+                    </div>
+                  </div>
+                  <div id="forget" class="form-inline fr mt-0 mb-2"><a data-toggle="modal" data-target="#exampleModal" class="font-weight-bold">Forget Password?</a></div>
+                  <button type="submit" [disabled]="loginForm.invalid" class="btn btn-success mb-2">
+                      Login
+                  </button>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+

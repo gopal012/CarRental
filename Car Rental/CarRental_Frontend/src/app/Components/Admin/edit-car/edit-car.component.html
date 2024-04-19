@@ -1,0 +1,58 @@
+<div class="container my-5">
+    <h1 class="mb-2 text-center">Edit Car</h1>
+    <div class="row d-flex justify-content-center">
+        <div class="col-6">
+            <form #form="ngForm" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                    <label class="form-label">Id</label>
+                    <input type="text" 
+                           class="form-control" 
+                           name="carId" 
+                           [(ngModel)]="carDetails.carId" 
+                           disabled>
+                  </div>
+                <div class="mb-3">
+                  <label class="form-label">Maker Name</label>
+                  <input type="text" 
+                         class="form-control" 
+                         name="makerName" 
+                         [(ngModel)]="carDetails.makerName" >
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Model</label>
+                    <input type="text" 
+                           class="form-control" 
+                           name="model" 
+                           [(ngModel)]="carDetails.model">
+                </div>
+                  <div class="mb-3">
+                    <label class="form-label">Image URL</label>
+                    <input type="text" 
+                           class="form-control"
+                           name="imageUrl" 
+                           [(ngModel)]="carDetails.imageUrl">
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Price</label>
+                    <input type="number" 
+                           class="form-control" 
+                           name="price" 
+                           [(ngModel)]="carDetails.price">
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Availaible : </label>
+                    <br>
+                      <input type="radio" name="isAvailaible" value=true class="me-3" [(ngModel)]="isAvailaible">
+                      <label for="isAvailaible">True</label><br>
+                      <input type="radio" name="isAvailaible" value=false class="me-3" [(ngModel)]="isAvailaible">
+                      <label for="isAvailaible">False</label><br>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary me-1">Submit</button>
+                    <button type="button" class="btn btn-danger ms-1" routerLink="/admin">Cancel</button>
+                  </div>
+              </form>
+        </div>
+    </div>
+</div>
+

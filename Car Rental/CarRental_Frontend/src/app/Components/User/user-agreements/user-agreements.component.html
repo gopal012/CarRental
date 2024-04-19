@@ -1,0 +1,42 @@
+<ng-container *ngIf="agreements.length>0">
+    <div id="div-1" class="container my-5 py-3">
+        <div>
+            <h1 class="fw-bold text-center p-2">Your Car Rent Bookings</h1>
+        </div>
+        <div *ngFor="let agreement of agreements">
+            <div *ngFor="let car of cars">
+                <div *ngIf="agreement.carId == car.carId">
+                    <div id="div-2" class="container w-75 d-flex justify-content-evenly my-4">
+                        <div class="w-75">
+                            <!-- <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNZw47oA4TMouVo_uADKGziSg-r-U0MBlOTw&usqp=CAU'> -->
+                            <img src={{car.imageUrl}}>
+                        </div>
+                        <div class="d-flex flex-column  justify-content-center w-75">
+                            <div class="fw-bold">Agreement Id - {{agreement.id}}</div>
+                            <div class="fw-bold">Car Name - {{car.makerName}} {{car.model}}</div>
+                            <div class="fw-bold">UserId - {{agreement.userId}}</div>
+                            <div class="fw-bold">Total Cost - {{agreement.totalRentAmount}}</div>
+                            <div class="fw-bold">Duration - {{agreement.rentDuration}} Days</div>
+                            <div class="fw-bold">Rent Date - {{agreement.rentDate}}</div>
+                            <div class="fw-bold">Return Date - {{agreement.returnDate}}</div>
+                            <div *ngIf="!agreement.requestForReturn">
+                                <button class="btn btn-danger my-2" (click)="requestForReturn(agreement)">Request For Return</button>
+                            </div>
+                            <div *ngIf="agreement.requestForReturn">
+                                <button class="btn btn-success my-2" (click)="requestForReturn(agreement)">Request For Return</button><i class="bi bi-patch-check-fill text-success ms-2"></i>
+                            </div>
+                        </div>
+                        <div class="end w-25">
+                            Car Booked <i class="bi bi-patch-check-fill text-success ms-2"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+<ng-container *ngIf="agreements.length<=0">
+    <div>
+        <h1 class="fw-bold text-center p-2">No Car Booking !!</h1>
+    </div>
+</ng-container>

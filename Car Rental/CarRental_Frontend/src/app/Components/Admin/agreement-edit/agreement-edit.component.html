@@ -1,0 +1,42 @@
+<div class="container my-5">
+  <h1 class="mb-2 text-center">Edit Agreement</h1>
+  <div class="row d-flex justify-content-center">
+    <div class="col-6">
+      <form #form="ngForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label class="form-label">Id</label>
+          <input type="text" class="form-control" name="id" [(ngModel)]="agreementDetails.id" disabled>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Car Id</label>
+          <input type="text" class="form-control" name="carId" [(ngModel)]="agreementDetails.carId">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">User Id</label>
+          <input type="number" class="form-control" name="userId" [(ngModel)]="agreementDetails.userId">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">total Rent Amount</label>
+          <input type="number" class="form-control" name="totalRentAmount"
+            [(ngModel)]="agreementDetails.totalRentAmount">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Rent Duration</label>
+          <input type="number" class="form-control" name="rentDuration" [(ngModel)]="agreementDetails.rentDuration">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Request For Return : </label>
+          <br>
+          <input type="radio" name="requestForReturn" value=true class="me-3" [(ngModel)]="requestForReturn">
+          <label for="requestForReturn">True</label><br>
+          <input type="radio" name="requestForReturn" value=false class="me-3" [(ngModel)]="requestForReturn">
+          <label for="requestForReturn">False</label><br>
+        </div>
+        <div class="d-flex justify-content-center">
+          <button type="submit" class="btn btn-primary me-1">Submit</button>
+          <button type="button" class="btn btn-danger ms-1" routerLink="/admin/agreements">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
